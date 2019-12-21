@@ -1,0 +1,36 @@
+@import '../../node_modules/@ewtd/ewt-css/variable.scss';
+
+$prefix: 'ewt-empty-data';
+.#{$prefix} {
+  text-align: center;
+  font-size: 14px;
+  .#{$prefix}-icon {
+    width: 120px;
+    height: 90px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: inline-block;
+    background-size: contain;
+  }
+  &.small {
+    font-size: 14px;
+    .#{$prefix}-icon {
+      width: 80px;
+      height: 60px;
+    }
+    .#{$prefix}-content {
+      margin-top: 3px;
+    }
+  }
+  &.large {
+    font-size: 16px;
+    .#{$prefix}-icon {
+      width: 200px;
+      height: 180px;
+    }
+  }
+  .#{$prefix}-content {
+    color: rgba(0, 0, 0, .4);
+    margin-top: 5px;
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "name": "@ewtd/ewt-npm-version-test",
+  "version": "0.1.2",
+  "description": "An ewt component",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "ewt server",
+    "dev": "ewt server",
+    "build": "ewt build",
+    "test": "ewt test",
+    "commit": "npx git-cz",
+    "coverage": "ewt test --coverage",
+    "lint": "eslint --fix src/*",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "precommit": "lint-staged",
+    "commitmsg": "commitlint -E GIT_PARAMS",
+    "version": "npm run changelog && git add CHANGELOG.md",
+    "postversion": "git push && git push --tags",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "mistong ewt team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://git.mistong.com/ewtd/ewt-npm-version-test.git"
+  },
+  "bugs": {
+    "url": "http://git.mistong.com/ewtd/ewt-npm-version-test/issues"
+  },
+  "homepage": "http://git.mistong.com/ewtd/ewt-npm-version-test",
+  "keywords": [
+    "react",
+    "react-component",
+    "ewt"
+  ],
+  "files": [
+    "dist",
+    "src",
+    "demo"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "@ewtd/ewt-code": "^1.0.0",
+    "@ewtd/ewt-demo": "^1.0.0",
+    "@ewtd/ewt-css": "^1.0.0",
+    "babel-eslint": "^7.2.3",
+    "commitlint": "^7.2.1",
+    "console-polyfill": "^0.3.0",
+    "conventional-changelog-cli": "^2.0.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-14": "^1.1.0",
+    "es5-shim": "^4.5.10",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.8.2",
+    "event-source-polyfill": "^1.0.3",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
+    "react": "^0.14.9",
+    "react-addons-test-utils": "^0.14.8",
+    "react-dom": "^0.14.9"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "prop-types": "^15.6.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add ."
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "subject-case": [
+        0
+      ]
+    }
+  }
+}
