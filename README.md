@@ -28,3 +28,4 @@ import { EmptyData } from '@ewtd/ewt';
 |icon|自定义图片|string|`https://yukap6.github.io/images/empty.png`|
 |type|背景图片类型 (`small` `medium` `large`)|string|`medium`|
 
+github的这个 web IDE 有点强大啊，牛x
